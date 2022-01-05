@@ -778,7 +778,7 @@
   #define DELTA_DIAGONAL_ROD 290.8        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 353.9             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 353.1             // (mm) Get this value from G33 auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
@@ -967,7 +967,7 @@
 
 // delta speeds must be the same on xyz
 #define DEFAULT_XYZ_STEPS_PER_UNIT ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 218 }  // Extruder steps/mm copied from 2021-04-15.epr (437 divide by 2)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 214 }  // Extruder steps/mm copied from 2021-04-15.epr (437 divide by 2)
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1815,7 +1815,7 @@
 #endif
 
 // Delta only homes to Z
-#define HOMING_FEEDRATE_MM_M { (200*60), (200*60), (200*60) }
+#define HOMING_FEEDRATE_MM_M { (100*60), (100*60), (100*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
