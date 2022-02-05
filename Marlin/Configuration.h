@@ -35,7 +35,7 @@
  *
  * Advanced settings can be found in Configuration_adv.h
  */
-#define CONFIGURATION_H_VERSION 02000901
+#define CONFIGURATION_H_VERSION 02000903
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -778,7 +778,7 @@
   #define DELTA_DIAGONAL_ROD 290.8        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 353.1             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 353.6             // (mm) Get this value from G33 auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
@@ -786,7 +786,9 @@
   // #define DELTA_RADIUS (PRINTER_RADIUS-END_EFFECTOR_HORIZONTAL_OFFSET-CARRIAGE_HORIZONTAL_OFFSET)
   //#define DELTA_RADIUS 124.0              // (mm) Get this value from G33 auto calibrate
   //#define DELTA_RADIUS 140.955 // default calulated from repieter source
-  #define DELTA_RADIUS 136.0 // Copied from 2021-04-15.epr
+  // Raise if nozzle goes down toward build plate at all 3 towers
+  // Lower if nozzle goes up from build plate at all 3 towers
+  #define DELTA_RADIUS 136.6 // Copied from 2021-04-15.epr
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
@@ -961,13 +963,13 @@
  */
 // variables to calculate steps
 #define XYZ_FULL_STEPS_PER_ROTATION 200
-#define XYZ_MICROSTEPS 8
+#define XYZ_MICROSTEPS 16
 #define XYZ_BELT_PITCH 2
 #define XYZ_PULLEY_TEETH 20
 
 // delta speeds must be the same on xyz
 #define DEFAULT_XYZ_STEPS_PER_UNIT ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 214 }  // Extruder steps/mm copied from 2021-04-15.epr (437 divide by 2)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 437 }  // Extruder steps/mm copied from 2021-04-15.epr
 
 /**
  * Default Max Feed Rate (mm/s)
