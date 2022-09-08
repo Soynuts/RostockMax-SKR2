@@ -778,7 +778,7 @@
   #define DELTA_DIAGONAL_ROD 290.8        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 353.6             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 353.8             // (mm) Get this value from G33 auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
